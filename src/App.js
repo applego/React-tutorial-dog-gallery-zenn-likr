@@ -52,6 +52,30 @@ function Gallery(props) {
   );
 }
 
+function Form() {
+  return (
+    <div>
+      <form>
+        <div className="field has-addons">
+          <div className="control is-expanded">
+            <div className="select is-fullwidth">
+              <select name="breed" defaultValue="shiba">
+                <option value="shiba">Shiba</option>
+                <option value="akita">Akita</option>
+              </select>
+            </div>
+          </div>
+          <div className="control">
+            <button type="submit" className="button is-dark">
+              Reload
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}
+
 function Main() {
 //   const urls = [
 //   "https://images.dog.ceo/breeds/shiba/shiba-11.jpg",
@@ -76,6 +100,11 @@ function Main() {
   }, []);
   return (
     <main>
+      <section className="section">
+        <div className="container">
+          <Form />
+        </div>
+      </section>
       <section className="section">
         <div className="container">
           <Gallery urls={urls} />
