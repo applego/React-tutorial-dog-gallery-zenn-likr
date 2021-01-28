@@ -10,14 +10,13 @@ function Header() {
   );
 }
 
-function Image() {
-  const url = "https://images.dog.ceo/breeds/shiba/shiba-8.jpg";
+function Image(props) {
   return (
     <div className="card">
       <div className="card-image">
         <figure className="image">
           <img
-            src={url}
+            src={props.url}
             alt="cute dog"
           />
         </figure>
@@ -27,10 +26,11 @@ function Image() {
 }
 
 function Gallery() {
+  const url = "https://images.dog.ceo/breeds/shiba/shiba-8.jpg";
   return (
     <div className="columns is-vcentered is-multiline">
       <div className="column is-3">
-        <Image />
+        <Image url={url}/>
       </div>
     </div>
   );
