@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { fetchImages } from './api';
+
 function Header() {
   return (
     <header className="hero is-dark is-bold">
@@ -65,6 +68,11 @@ function Main() {
 //   "https://images.dog.ceo/breeds/shiba/shiba-9.jpg",
 // ];
   const urls = null;
+  useEffect(() => {
+    fetchImages("shiba").then((urls) => {
+      console.log(urls);
+    });
+  }, []);
   return (
     <main>
       <section className="section">
