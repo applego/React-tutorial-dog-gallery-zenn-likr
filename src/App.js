@@ -1,3 +1,5 @@
+import BreedList from './dataBreedList';
+
 import { useEffect, useState } from 'react';
 import { fetchImages } from './api';
 
@@ -66,8 +68,11 @@ function Form(props) {
           <div className="control is-expanded">
             <div className="select is-fullwidth">
               <select name="breed" defaultValue="shiba">
-                <option value="shiba">Shiba</option>
-                <option value="akita">Akita</option>
+                {/* <option value="shiba">Shiba</option>
+                <option value="akita">Akita</option> */}
+                {BreedList.map((breed, index) => {
+                  return <option key={index.toString()} value={breed}>{breed}</option>
+                })};
               </select>
             </div>
           </div>
